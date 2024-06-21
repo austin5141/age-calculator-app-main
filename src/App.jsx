@@ -104,17 +104,17 @@ function App() {
       return console.log("Error")
     }
 
-      let currYear = currDate.getFullYear()
-      let currMonth = currDate.getMonth()
-      let currDay = currDate.getDate()
+    let currYear = currDate.getFullYear()
+    let currMonth = currDate.getMonth()
+    let currDay = currDate.getDate()
 
-      let inputYear = date.getFullYear()
-      let inputMonth = date.getMonth()
-      let inputDay = date.getDate()
+    let inputYear = date.getFullYear()
+    let inputMonth = date.getMonth()
+    let inputDay = date.getDate()
 
-      let y = currYear - inputYear
-      let m;
-      let d;
+    let y = currYear - inputYear
+    let m;
+    let d;
       
     if (currMonth >= inputMonth) {
       m = currMonth - inputMonth
