@@ -1,6 +1,39 @@
 import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import arrow from './assets/icon-arrow.svg'
 import './App.css'
+
+// function App() {
+//   const [count, setCount] = useState(0)
+
+//   return (
+//     <>
+//       <div>
+//         <a href="https://vitejs.dev" target="_blank">
+//           <img src={viteLogo} className="logo" alt="Vite logo" />
+//         </a>
+//         <a href="https://react.dev" target="_blank">
+//           <img src={reactLogo} className="logo react" alt="React logo" />
+//         </a>
+//       </div>
+//       <h1>Vite + React</h1>
+//       <div className="card">
+//         <button onClick={() => setCount((count) => count + 1)}>
+//           count is {count}
+//         </button>
+//         <p>
+//           Edit <code>src/App.jsx</code> and save to test HMR
+//         </p>
+//       </div>
+//       <p className="read-the-docs">
+//         Click on the Vite and React logos to learn more
+//       </p>
+//     </>
+//   )
+// }
+
+// export default App
 
 function App() {
 
@@ -25,7 +58,9 @@ function App() {
   })
 
   const currDate = new Date()
-  let date = new Date(`${month}-${day}-${year}`)
+  const array = `${year}-${month}-${day}`.split(/[-]/)
+  let date = new Date(array[0], array[1]-1, array[2]);
+  console.log(date)
   let invalidYear = year > currDate.getFullYear() || year < 1
   let invalidMonth = month < 1 || month > 12
   let invalidDay = day > 31 || day < 1
@@ -34,9 +69,11 @@ function App() {
   let invalidLeapYear = month == 2 && date.getMonth() == 2
 
   const checks = () => {
-
+    
     invalidYear ? setErrors((prevErrors) => ({...prevErrors, yearError: true})) : setErrors((prevErrors) => ({...prevErrors, yearError: false}))
+
     invalidMonth ? setErrors((prevErrors) => ({...prevErrors, monthError: true})) : setErrors((prevErrors) => ({...prevErrors, monthError: false}))
+    
     invalidDay ? setErrors((prevErrors) => ({...prevErrors, dayError: true})) : setErrors((prevErrors) => ({...prevErrors, dayError: false}))
     
 
@@ -104,17 +141,17 @@ function App() {
       return console.log("Error")
     }
 
-    let currYear = currDate.getFullYear()
-    let currMonth = currDate.getMonth()
-    let currDay = currDate.getDate()
+      let currYear = currDate.getFullYear()
+      let currMonth = currDate.getMonth()
+      let currDay = currDate.getDate()
 
-    let inputYear = date.getFullYear()
-    let inputMonth = date.getMonth()
-    let inputDay = date.getDate()
+      let inputYear = date.getFullYear()
+      let inputMonth = date.getMonth()
+      let inputDay = date.getDate()
 
-    let y = currYear - inputYear
-    let m;
-    let d;
+      let y = currYear - inputYear
+      let m;
+      let d;
       
     if (currMonth >= inputMonth) {
       m = currMonth - inputMonth
