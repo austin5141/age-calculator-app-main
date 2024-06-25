@@ -147,4 +147,8 @@ strong {
     width:5rem;
     height:5rem;
   }
+
+  .results {
+    bottom:20px;
+  }
 }
