@@ -11,6 +11,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+h1 {
+  display:none;
+}
+
 .container {
   background-color:hsl(0, 0%, 100%);
   max-width:60rem;
