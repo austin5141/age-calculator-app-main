@@ -115,12 +115,17 @@ strong {
     margin:3.5rem 1rem;
   }
   h2 {
-    font-size:4rem;
+    font-size:3.2rem;
   }
+
+  .inputs {
+    padding:1rem;
+  }
+
   .inputBox {
     height:4rem;
-    max-width:6.3rem;
-    font-size:1rem;
+    max-width:5.7rem;
+    font-size:0.8rem;
   }
 
   .divider {
