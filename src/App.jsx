@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import arrow from './assets/icon-arrow.svg'
 import './App.css'
 
@@ -27,8 +25,8 @@ function App() {
   })
 
   const currDate = new Date()
-  const array = `${year}-${month}-${day}`.split(/[-]/)
-  let date = new Date(array[0], array[1]-1, array[2]);
+  const array = `${year}/${month}/${day}`.split(/[/]/)
+  let date = new Date(`${year}/${month}/${day}`);
   console.log(date)
   let invalidYear = year > currDate.getFullYear() || year < 1
   let invalidMonth = month < 1 || month > 12
